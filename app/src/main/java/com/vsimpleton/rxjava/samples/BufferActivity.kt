@@ -45,7 +45,6 @@ class BufferActivity : AppCompatActivity() {
                     }
                     result /= t.size
                 }
-                Log.d("youzi", "更新平均温度：$result")
                 mBinding.tvTemperatureResult.text = "过去3秒收到了" + t.size + "个数据， 平均温度为：\n" + result
             }
 
@@ -64,7 +63,6 @@ class BufferActivity : AppCompatActivity() {
     }
 
     private fun updateTemperature(temperature: Double) {
-        Log.d("youzi", "温度测量结果：$temperature")
         mPublishSubject.onNext(temperature)
     }
 

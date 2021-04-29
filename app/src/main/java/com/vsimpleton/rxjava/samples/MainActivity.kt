@@ -21,12 +21,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private fun initListener() {
         mBinding.btn1.setOnClickListener(this)
         mBinding.btn2.setOnClickListener(this)
+        mBinding.btn3.setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
         when(v) {
             mBinding.btn1 -> startActivity<BackgroundActivity>(this)
             mBinding.btn2 -> startActivity<BufferActivity>(this)
+            mBinding.btn3 -> startActivity<SearchActivity>(this)
         }
     }
 }
