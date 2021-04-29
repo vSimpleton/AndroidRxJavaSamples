@@ -32,7 +32,7 @@ class BackgroundActivity : AppCompatActivity() {
 
     private fun startDownload() {
         // 被观察者
-        val observable = Observable.create(ObservableOnSubscribe<Int> {
+        val observable = Observable.create<Int> {
             for (i in 0..99) {
                 if (i % 20 == 0) {
                     try {
@@ -46,7 +46,7 @@ class BackgroundActivity : AppCompatActivity() {
                 }
             }
             it.onComplete()
-        })
+        }
 
         // 观察者
         val observer = object : DisposableObserver<Int>() {
